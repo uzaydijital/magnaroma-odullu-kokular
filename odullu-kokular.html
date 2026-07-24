@@ -982,5 +982,23 @@
   </section>
 </div>
 
+<script>
+  // iframe içine gömüldüğünde üst sayfaya gerçek yüksekliği bildirir,
+  // böylece iframe her zaman içeriğe tam oturur (boşluk/kesilme olmaz).
+  (function () {
+    function sendHeight() {
+      var h = document.documentElement.scrollHeight;
+      window.parent.postMessage({ magnaromaIframeHeight: h }, "*");
+    }
+    window.addEventListener("load", sendHeight);
+    window.addEventListener("resize", sendHeight);
+    if (window.ResizeObserver) {
+      new ResizeObserver(sendHeight).observe(document.body);
+    } else {
+      setInterval(sendHeight, 1000);
+    }
+  })();
+</script>
+
 </body>
 </html>
