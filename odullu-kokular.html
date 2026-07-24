@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ödüllü Kokular | Magnaroma</title>
+<link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ============ 1. TÜM ZAMANLARIN EN İYİ NİŞ KOKUSU ============ */
+  .magna-niche-area {
+    font-family: 'Albert Sans', sans-serif;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 24px;
+    color: #1f1f1f;
+  }
+  .magna-niche-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 42px;
+    align-items: center;
+    margin-bottom: 34px;
+  }
+  .magna-niche-hero img {
+    width: 100%;
+    border-radius: 16px;
+    display: block;
+  }
+  .magna-niche-content h1 {
+    font-size: 36px;
+    line-height: 1.15;
+    font-weight: 600;
+    margin-bottom: 18px;
+  }
+  .magna-niche-content p {
+    font-size: 17px;
+    line-height: 1.75;
+    color: #555;
+    margin-bottom: 0;
+  }
+  .magna-niche-content a {
+    color: #000;
+    font-weight: 600;
+  }
+  .magna-niche-highlight {
+    color: #085294;
+    font-weight: 700;
+  }
+  .magna-niche-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+  }
+  .magna-niche-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 16px;
+    padding: 18px;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0,0,0,.06);
+  }
+  .magna-niche-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: contain;
+    border-radius: 12px;
+    margin-bottom: 14px;
+    background: #fafafa;
+  }
+  .magna-niche-card h3 {
+    font-size: 17px;
+    line-height: 1.35;
+    font-weight: 600;
+    min-height: 46px;
+    margin-bottom: 14px;
+  }
+  .magna-niche-card a {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    padding: 11px 20px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .magna-niche-card a:hover {
+    background: #333;
+  }
+  @media (max-width: 768px) {
+    .magna-niche-area { padding: 14px; }
+    .magna-niche-hero { grid-template-columns: 1fr; gap: 20px; }
+    .magna-niche-content { text-align: center; }
+    .magna-niche-content h1 { font-size: 28px; }
+    .magna-niche-content p { font-size: 15px; }
+    .magna-niche-grid {
+      display: flex;
+      overflow-x: auto;
+      gap: 16px;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 8px;
+      scrollbar-width: none;
+    }
+    .magna-niche-grid::-webkit-scrollbar { display: none; }
+    .magna-niche-card { min-width: 82%; scroll-snap-align: center; }
+  }
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .magna-niche-hero { grid-template-columns: 1fr; }
+    .magna-niche-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* ============ 2. TÜM ZAMANLARIN EN İYİ ERKEK KOKUSU ============ */
+  .magna-men-area {
+    font-family: 'Albert Sans', sans-serif;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 24px;
+    color: #1f1f1f;
+  }
+  .magna-men-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 42px;
+    align-items: center;
+    margin-bottom: 34px;
+  }
+  .magna-men-hero img { width: 100%; border-radius: 16px; display: block; }
+  .magna-men-content h1 { font-size: 36px; line-height: 1.15; font-weight: 600; margin-bottom: 18px; }
+  .magna-men-content p { font-size: 17px; line-height: 1.75; color: #555; margin-bottom: 0; }
+  .magna-men-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+  .magna-men-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 16px;
+    padding: 18px;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0,0,0,.06);
+  }
+  .magna-men-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: contain;
+    border-radius: 12px;
+    margin-bottom: 14px;
+    background: #fafafa;
+  }
+  .magna-men-card h3 { font-size: 17px; line-height: 1.35; font-weight: 600; min-height: 46px; margin-bottom: 14px; }
+  .magna-men-card a {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    padding: 11px 20px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .magna-men-card a:hover { background: #333; }
+  @media (max-width: 768px) {
+    .magna-men-area { padding: 14px; }
+    .magna-men-hero { grid-template-columns: 1fr; gap: 20px; }
+    .magna-men-content { text-align: center; }
+    .magna-men-content h1 { font-size: 28px; }
+    .magna-men-content p { font-size: 15px; }
+    .magna-men-grid {
+      display: flex;
+      overflow-x: auto;
+      gap: 16px;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 8px;
+      scrollbar-width: none;
+    }
+    .magna-men-grid::-webkit-scrollbar { display: none; }
+    .magna-men-card { min-width: 82%; scroll-snap-align: center; }
+  }
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .magna-men-hero { grid-template-columns: 1fr; }
+    .magna-men-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* ============ 3. TÜM ZAMANLARIN EN İYİ KADIN KOKUSU ============ */
+  .magna-women-area {
+    font-family: 'Albert Sans', sans-serif;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 24px;
+    color: #1f1f1f;
+  }
+  .magna-women-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 42px;
+    align-items: center;
+    margin-bottom: 34px;
+  }
+  .magna-women-hero img { width: 100%; border-radius: 16px; display: block; }
+  .magna-women-content h1 { font-size: 36px; line-height: 1.15; font-weight: 600; margin-bottom: 18px; }
+  .magna-women-content p { font-size: 17px; line-height: 1.75; color: #555; margin-bottom: 0; }
+  .magna-women-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 22px; }
+  .magna-women-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 16px;
+    padding: 18px;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0,0,0,.06);
+  }
+  .magna-women-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: contain;
+    border-radius: 12px;
+    margin-bottom: 14px;
+    background: #fafafa;
+  }
+  .magna-women-card h3 { font-size: 17px; line-height: 1.35; font-weight: 600; min-height: 46px; margin-bottom: 14px; }
+  .magna-women-card a {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    padding: 11px 20px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .magna-women-card a:hover { background: #333; }
+  @media (max-width: 768px) {
+    .magna-women-area { padding: 14px; }
+    .magna-women-hero { grid-template-columns: 1fr; gap: 20px; }
+    .magna-women-content { text-align: center; }
+    .magna-women-content h1 { font-size: 28px; }
+    .magna-women-content p { font-size: 15px; }
+    .magna-women-grid {
+      display: flex;
+      overflow-x: auto;
+      gap: 16px;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 8px;
+      scrollbar-width: none;
+    }
+    .magna-women-grid::-webkit-scrollbar { display: none; }
+    .magna-women-card { min-width: 82%; scroll-snap-align: center; }
+  }
+  @media (min-width: 769px) and (max-width: 1200px) {
+    .magna-women-hero { grid-template-columns: 1fr; }
+    .magna-women-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* ============ 4. 2022 & 2023 EN İYİ NİŞ PARFÜM ============ */
+  .magna-award-area {
+    font-family: 'Albert Sans', sans-serif;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 24px;
+    color: #1f1f1f;
+  }
+  .magna-award-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 42px;
+    align-items: center;
+    margin-bottom: 34px;
+  }
+  .magna-award-hero img { width: 100%; border-radius: 16px; display: block; }
+  .magna-award-content h1 { font-size: 36px; line-height: 1.15; font-weight: 600; margin-bottom: 18px; }
+  .magna-award-content p { font-size: 17px; line-height: 1.75; color: #555; margin-bottom: 0; }
+  .magna-award-grid { display: grid; grid-template-columns: repeat(1, 1fr); gap: 22px; }
+  .magna-award-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 16px;
+    padding: 18px;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0,0,0,.06);
+  }
+  .magna-award-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: contain;
+    border-radius: 12px;
+    margin-bottom: 14px;
+    background: #fafafa;
+  }
+  .magna-award-card h3 { font-size: 17px; line-height: 1.35; font-weight: 600; margin-bottom: 14px; }
+  .magna-award-card a {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    padding: 11px 20px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .magna-award-card a:hover { background: #333; }
+  @media (max-width: 768px) {
+    .magna-award-area { padding: 14px; }
+    .magna-award-hero { grid-template-columns: 1fr; gap: 20px; }
+    .magna-award-content { text-align: center; }
+    .magna-award-content h1 { font-size: 28px; }
+    .magna-award-content p { font-size: 15px; }
+    .magna-award-grid {
+      display: flex;
+      overflow-x: auto;
+      gap: 16px;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 8px;
+      scrollbar-width: none;
+    }
+    .magna-award-grid::-webkit-scrollbar { display: none; }
+    .magna-award-card { min-width: 82%; scroll-snap-align: center; }
+  }
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .magna-award-hero { grid-template-columns: 1fr; }
+  }
+
+  /* ============ 5. 2024 EN İYİ NİŞ PARFÜMÜ ============ */
+  .magna-2024-area {
+    font-family: 'Albert Sans', sans-serif;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 24px;
+    color: #1f1f1f;
+  }
+  .magna-2024-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 42px;
+    align-items: center;
+    margin-bottom: 34px;
+  }
+  .magna-2024-hero img { width: 100%; border-radius: 16px; display: block; }
+  .magna-2024-content h1 { font-size: 36px; line-height: 1.15; font-weight: 600; margin-bottom: 18px; }
+  .magna-2024-content p { font-size: 17px; line-height: 1.75; color: #555; margin-bottom: 0; }
+  .magna-2024-grid { display: grid; grid-template-columns: repeat(1, 1fr); gap: 22px; }
+  .magna-2024-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 16px;
+    padding: 18px;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0,0,0,.06);
+  }
+  .magna-2024-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: contain;
+    border-radius: 12px;
+    margin-bottom: 14px;
+    background: #fafafa;
+  }
+  .magna-2024-card h3 { font-size: 17px; line-height: 1.35; font-weight: 600; margin-bottom: 14px; }
+  .magna-2024-card a {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    padding: 11px 20px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .magna-2024-card a:hover { background: #333; }
+  @media (max-width: 768px) {
+    .magna-2024-area { padding: 14px; }
+    .magna-2024-hero { grid-template-columns: 1fr; gap: 20px; }
+    .magna-2024-content { text-align: center; }
+    .magna-2024-content h1 { font-size: 28px; }
+    .magna-2024-content p { font-size: 15px; }
+    .magna-2024-card { width: 100%; }
+  }
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .magna-2024-hero { grid-template-columns: 1fr; }
+  }
+
+  /* ============ 6. 2025 KADINLARIN FAVORİ ERKEK KOKUSU ============ */
+  .magna-menfav25-area {
+    font-family: 'Albert Sans', sans-serif;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 24px;
+    color: #1f1f1f;
+  }
+  .magna-menfav25-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 42px;
+    align-items: center;
+    margin-bottom: 34px;
+  }
+  .magna-menfav25-hero img { width: 100%; border-radius: 16px; display: block; }
+  .magna-menfav25-content h1 { font-size: 36px; line-height: 1.15; font-weight: 600; margin-bottom: 18px; }
+  .magna-menfav25-content p { font-size: 17px; line-height: 1.7; color: #555; }
+  .magna-menfav25-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+  .magna-menfav25-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 18px;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0,0,0,.06);
+  }
+  .magna-menfav25-card img { width: 100%; height: 230px; object-fit: contain; margin-bottom: 14px; }
+  .magna-menfav25-card h3 { font-size: 17px; line-height: 1.35; font-weight: 600; margin-bottom: 12px; }
+  .magna-menfav25-card a {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .magna-menfav25-card a:hover { background: #333; }
+  @media(max-width:768px){
+    .magna-menfav25-area { padding: 14px; }
+    .magna-menfav25-hero { grid-template-columns: 1fr; gap: 20px; }
+    .magna-menfav25-content { text-align: center; }
+    .magna-menfav25-content h1 { font-size: 28px; }
+    .magna-menfav25-content p { font-size: 15px; }
+    .magna-menfav25-grid {
+      display: flex;
+      overflow-x: auto;
+      gap: 14px;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+    }
+    .magna-menfav25-grid::-webkit-scrollbar { display: none; }
+    .magna-menfav25-card { min-width: 80%; scroll-snap-align: center; }
+  }
+  @media(min-width:769px) and (max-width:1200px){
+    .magna-menfav25-hero { grid-template-columns: 1fr; }
+    .magna-menfav25-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* ============ 7. 2025 EN İYİ ERKEK PARFÜMLERİ ============ */
+  .magna-men24-area {
+    font-family: 'Albert Sans', sans-serif;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 24px;
+    color: #1f1f1f;
+  }
+  .magna-men24-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 42px;
+    align-items: center;
+    margin-bottom: 34px;
+  }
+  .magna-men24-hero img { width: 100%; border-radius: 16px; }
+  .magna-men24-content h1 { font-size: 36px; font-weight: 600; margin-bottom: 18px; }
+  .magna-men24-content p { font-size: 17px; line-height: 1.7; color: #555; }
+  .magna-men24-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .magna-men24-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 18px;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0,0,0,.06);
+  }
+  .magna-men24-card img { width: 100%; height: 230px; object-fit: contain; margin-bottom: 14px; }
+  .magna-men24-card h3 { font-size: 17px; font-weight: 600; margin-bottom: 12px; }
+  .magna-men24-card a {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .magna-men24-card a:hover { background: #333; }
+  @media(max-width:768px){
+    .magna-men24-hero { grid-template-columns: 1fr; }
+    .magna-men24-content { text-align: center; }
+    .magna-men24-grid { display: flex; overflow-x: auto; gap: 14px; }
+    .magna-men24-card { min-width: 80%; }
+  }
+
+  /* ============ 8. 2025 ÖNE ÇIKAN NİŞ KADIN KOKULARI ============ */
+  .magna-women24-area {
+    font-family: 'Albert Sans', sans-serif;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 24px;
+    color: #1f1f1f;
+  }
+  .magna-women24-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 42px;
+    align-items: center;
+    margin-bottom: 34px;
+  }
+  .magna-women24-hero img { width: 100%; border-radius: 16px; }
+  .magna-women24-content h1 { font-size: 36px; font-weight: 600; margin-bottom: 18px; }
+  .magna-women24-content p { font-size: 17px; line-height: 1.7; color: #555; }
+  .magna-women24-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+  .magna-women24-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 18px;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0,0,0,.06);
+  }
+  .magna-women24-card img { width: 100%; height: 230px; object-fit: contain; margin-bottom: 14px; }
+  .magna-women24-card h3 { font-size: 17px; font-weight: 600; margin-bottom: 12px; }
+  .magna-women24-card a {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .magna-women24-card a:hover { background: #333; }
+  @media(max-width:768px){
+    .magna-women24-hero { grid-template-columns: 1fr; }
+    .magna-women24-content { text-align: center; }
+    .magna-women24-grid { display: flex; overflow-x: auto; gap: 14px; }
+    .magna-women24-card { min-width: 80%; }
+  }
+
+  /* ============ 9. 2025 ERKEKLERİN FAVORİ KADIN KOKUSU ============ */
+  .magna-womenfav25-area {
+    font-family: 'Albert Sans', sans-serif;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 24px;
+    color: #1f1f1f;
+  }
+  .magna-womenfav25-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 42px;
+    align-items: center;
+    margin-bottom: 34px;
+  }
+  .magna-womenfav25-hero img { width: 100%; border-radius: 16px; display: block; }
+  .magna-womenfav25-content h1 { font-size: 36px; line-height: 1.15; font-weight: 600; margin-bottom: 18px; }
+  .magna-womenfav25-content p { font-size: 17px; line-height: 1.7; color: #555; }
+  .magna-womenfav25-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+  .magna-womenfav25-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 18px;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0,0,0,.06);
+  }
+  .magna-womenfav25-card img { width: 100%; height: 230px; object-fit: contain; margin-bottom: 14px; }
+  .magna-womenfav25-card h3 { font-size: 17px; line-height: 1.35; font-weight: 600; margin-bottom: 12px; }
+  .magna-womenfav25-card a {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .magna-womenfav25-card a:hover { background: #333; }
+  @media(max-width:768px){
+    .magna-womenfav25-area { padding: 14px; }
+    .magna-womenfav25-hero { grid-template-columns: 1fr; gap: 20px; }
+    .magna-womenfav25-content { text-align: center; }
+    .magna-womenfav25-content h1 { font-size: 28px; }
+    .magna-womenfav25-content p { font-size: 15px; }
+    .magna-womenfav25-grid {
+      display: flex;
+      overflow-x: auto;
+      gap: 14px;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+    }
+    .magna-womenfav25-grid::-webkit-scrollbar { display: none; }
+    .magna-womenfav25-card { min-width: 80%; scroll-snap-align: center; }
+  }
+  @media(min-width:769px) and (max-width:1200px){
+    .magna-womenfav25-hero { grid-template-columns: 1fr; }
+    .magna-womenfav25-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ 1. TÜM ZAMANLARIN EN İYİ NİŞ KOKUSU ============ -->
+<div class="magna-niche-area">
+  <section class="magna-niche-hero">
+    <div>
+      <a href="https://magnaroma.com.tr/perfume-masters">
+        <img src="images/hero-nis-tum-zamanlar.png" alt="Tüm Zamanların En İyi Niş Kokuları">
+      </a>
+    </div>
+    <div class="magna-niche-content">
+      <h1>Tüm Zamanların En İyi Niş Kokusu</h1>
+      <p>
+        <a href="https://magnaroma.com.tr/pantheon-1?Hacim=100-ml&amp;SETLI%2FSETSIZ%2F=Cep-%C5%9Ei%C5%9Fesi-ve-Kutu-%C4%B0stemiyorum">1. Xerjoff Naxos</a><br>
+        4 yıldır üst üste tüm zamanların en iyi niş parfümü seçildi. Tütün, bal ve narenciyenin eşsiz dengesiyle Naxos, niş parfüm dünyasının baş yapıtlarından biri.<br>
+        <span class="magna-niche-highlight">Bizdeki karşılığı: Pantheon</span><br><br>
+        <a href="https://magnaroma.com.tr/ani-premium-set?Hacim=100-ml&amp;SETLI%2FSETSIZ%2F=Cep-%C5%9Ei%C5%9Fesi-ve-Kutu-%C4%B0stemiyorum">3. Nishane Ani</a><br>
+        Vanilya, baharatlar ve taze turunçgillerle harmanlanan Ani, duygusal yoğunluğu yüksek, unutulmaz bir imza koku.<br>
+        <span class="magna-niche-highlight">Bizdeki karşılığı: Lose Control</span><br><br>
+        <a href="https://magnaroma.com.tr/spice-road-premium-set?Hacim=100-ml&amp;SETLI%2FSETSIZ%2F=Cep-%C5%9Ei%C5%9Fesi-ve-Kutu-%C4%B0stemiyorum">4. Frédéric Malle - Musc Ravageur</a><br>
+        Baharatların sıcaklığı ve miskin çekiciliğiyle Musc Ravageur, baştan çıkarıcı ve özgüvenli bir duruş sergiliyor.<br>
+        <span class="magna-niche-highlight">Bizdeki karşılığı: Spice Road</span><br><br>
+        <a href="https://magnaroma.com.tr/sole-rosso-frederic-malle-portrait-of-a-lady-premium-set?Hacim=100-ml&amp;SETLI%2FSETSIZ%2F=Cep-%C5%9Ei%C5%9Fesi-ve-Kutu-%C4%B0stemiyorum">5. Frédéric Malle - Portrait of a Lady</a><br>
+        Gül, paçuli ve miskin zengin birleşimiyle Portrait of a Lady, zarafet ve ihtişamın en güçlü ifadesi.<br>
+        <span class="magna-niche-highlight">Bizdeki karşılığı: Sole Rosso</span>
+      </p>
+    </div>
+  </section>
+  <section class="magna-niche-grid">
+    <div class="magna-niche-card">
+      <img src="https://cdn.myikas.com/images/26b68f22-f0b6-4a1c-98aa-00def11324f5/23238d0a-69bc-4d2a-b7cb-6a2fb81c5071/3840/gemini-generated-image-eze7tceze7tceze7.webp" alt="Pantheon">
+      <h3>1 - Xerjoff Naxos<br>Pantheon</h3>
+      <a href="https://magnaroma.com.tr/pantheon-1?Hacim=100-ml&amp;SETLI%2FSETSIZ%2F=Cep-%C5%9Ei%C5%9Fesi-ve-Kutu-%C4%B0stemiyorum">Ürüne Git</a>
+    </div>
+    <div class="magna-niche-card">
+      <img src="https://cdn.myikas.com/images/26b68f22-f0b6-4a1c-98aa-00def11324f5/04cc34cd-08ee-4c5e-bb3d-1e7a666ceb48/1296/photoroom-20240219-012156.webp" alt="Lose Control">
+      <h3>2 - Nishane Ani<br>Lose Control</h3>
+      <a href="https://magnaroma.com.tr/ani-premium-set?Hacim=100-ml&amp;SETLI%2FSETSIZ%2F=Cep-%C5%9Ei%C5%9Fesi-ve-Kutu-%C4%B0stemiyorum">Ürüne Git</a>
+    </div>
+    <div class="magna-niche-card">
+      <img src="https://cdn.myikas.com/images/26b68f22-f0b6-4a1c-98aa-00def11324f5/60763a59-e435-4857-98b8-827886d283b9/3840/chatgpt-image-31-ara-2025-16-26-42.webp" alt="Regnum">
+      <h3>3 - Bois Imperial<br>Regnum</h3>
+      <a href="https://magnaroma.com.tr/regnum-essential-parfums-bois-imperial-premium-set?Hacim=100-ml&amp;SETLI%2FSETSIZ%2F=Set-Olarak-%C4%B0stiyorum">Ürüne Git</a>
+    </div>
+    <div class="magna-niche-card">
+      <img src="https://cdn.myikas.com/images/26b68f22-f0b6-4a1c-98aa-00def11324f5/b922c23e-08e0-45a8-94ac-0568cf0ebea9/image_1296.webp" alt="Spice Road">
+      <h3>4 - Frédéric Malle Musc Ravageur<br>Spice Road</h3>
+      <a href="https://magnaroma.com.tr/spice-road-premium-set?Hacim=100-ml&amp;SETLI%2FSETSIZ%2F=Cep-%C5%9Ei%C5%9Fesi-ve-Kutu-%C4%B0stemiyorum">Ürüne Git</a>
+    </div>
+    <div class="magna-niche-card">
+      <img src="https://cdn.myikas.com/images/26b68f22-f0b6-4a1c-98aa-00def11324f5/8a914b35-9acf-4cec-a9cd-8c4e84c82eff/3840/buyuk-dsc6829.webp" alt="Lux Noctis">
+      <h3>5 - Gris Charnel Extrait<br>Lux Noctis</h3>
+      <a href="https://magnaroma.com.tr/luxnoctis?Hacim=100-ml&amp;SETLI%2FSETSIZ%2F=Set-Olarak-%C4%B0stiyorum">Ürüne Git</a>
+    </div>
+    <div class="magna-niche-card">
+      <img src="https://cdn.myikas.com/images/26b68f22-f0b6-4a1c-98aa-00def11324f5/45288e7f-705d-4100-b3c2-5dc0b06b28ce/1296/photoroom-20240510-143902.webp" alt="Sole Rosso">
+      <h3>6 - Frédéric Malle Portrait of a Lady<br>Sole Rosso</h3>
+      <a href="https://magnaroma.com.tr/sole-rosso-frederic-malle-portrait-of-a-lady-premium-set?Hacim=100-ml&amp;SETLI%2FSETSIZ%2F=Cep-%C5%9Ei%C5%9Fesi-ve-Kutu-%C4%B0stemiyorum">Ürüne Git</a>
+    </div>
+    <div class="magna-niche-card">
+      <img src="https://cdn.myikas.com/images/26b68f22-f0b6-4a1c-98aa-00def11324f5/e00b5744-c77f-449d-a151-b27a0190b656/3840/012.webp" alt="Primo Victoria">
+      <h3>9 - Xerjoff Alexandria II<br>Primo Victoria</h3>
+      <a href="https://magnaroma.com.tr/primo-victoria-premium-set?Hacim=100-ml&amp;SETLI%2FSETSIZ%2F=Set-Olarak-%C4%B0stiyorum">Ürüne Git</a>
+    </div>
+    <div class="magna-niche-card">
+      <img src="https://cdn.myikas.com/images/26b68f22-f0b6-4a1c-98aa-00def11324f5/435dd8a1-3299-4b35-8012-8e0abc74c215/image_1512.webp" alt="White Flame">
+      <h3>10 - Nishane Hacivat<br>White Flame</h3>
+      <a href="https://magnaroma.com.tr/nish-hacivat-premium-set?Hacim=100-ml&amp;SETLI%2FSETSIZ%2F=Cep-%C5%9Ei%C5%9Fesi-ve-Kutu-%C4%B0stemiyorum">Ürüne Git</a>
+    </div>
+  </section>
+</div>
+
+<!-- ============ 2. TÜM ZAMANLARIN EN İYİ ERKEK KOKUSU ============ -->
+<div class="magna-men-area">
+  <section class="magna-men-hero">
+    <div>
+      <a href="https://magnaroma.com.tr/erkek-designer-parfumler?o=7&amp;page=1">
+        <img src="images/hero-erkek-tum-zamanlar.png" alt="Tüm Zamanların En İyi Erkek Kokuları">
+      </a>
+    </div>
+    <div class="magna-men-content">
+      <h1>Tüm Zamanların En İyi Erkek Kokusu</h1>
+      <p>
+        Erkek parfüm dünyasında bazı kokular vardır; sadece güzel kokmaz, tarzı ve karakteri de tamamlar.
+        Aventus’un güçlü ve karizmatik etkisinden Dior Homme Intense’in sofistike iris dokusuna,
+        Terre d’Hermès’in doğal maskülenliğinden Bleu de Chanel’in zamansız ferahlığına kadar
+        öne çıkan bu seçkide Magnaroma’daki karşılıklarını senin için bir araya getirdik.
+      </p>
+    </div>
+  </section>
+  <section class="magna-men-grid">
+    <div class="magna-men-card">
+      <img src="https://cdn.myikas.com/images/26b68f22-f0b6-4a1c-98aa-00def11324f5/3872a5b2-2908-4f97-889a-979e6f6c175f/3840/photoroom-20240221-110010.webp" alt="Assassin's">
+      <h3>1 - Aventus<br>Assassin's</h3>
+      <a href="https://magnaroma.com.tr/assassin-s-premium-set?Hacim=55-ml&amp;SETLI%2FSETSIZ%2F=Cep-%C5%9Ei%C5%9Fesi-ve-Kutu-%C4%B0stemiyorum">Ürüne Git</a>
+    </div>
+    <div class="magna-men-card">
+      <img src="https://cdn.myikas.com/images/26b68f22-f0b6-4a1c-98aa-00def11324f5/f9a3136f-2820-4f37-8481-02ef562ee16c/2560/e94802-2041ec7972794cb5bb32883e3ddb5e59mv2.webp" alt="Flechazo">
+      <h3>2 - Dior Homme Intense<br>Flechazo</h3>
+      <a href="https://magnaroma.com.tr/flechazo?Hacim=100-ml">Ürüne Git</a>
+    </div>
+    <div class="magna-men-card">
+      <img src="https://cdn.myikas.com/images/26b68f22-f0b6-4a1c-98aa-00def11324f5/d71873e2-1864-4b19-9303-bba8bd3e07e8/image_2560.webp" alt="Hermétismes">
+      <h3>3 - Terre d’Hermès<br>Hermétismes</h3>
+      <a href="https://magnaroma.com.tr/herme?Hacim=50-ml">Ürüne Git</a>
+    </div>
+    <div class="magna-men-card">
+      <img src="https://cdn.myikas.com/images/26b68f22-f0b6-4a1c-98aa-00def11324f5/6dc6769a-536f-49e3-a4e2-9466ee12e3c7/1296/e94802-0154bb1218ad43daa163deb8bbfb7d0dmv2.webp" alt="Atmosphère">
+      <h3>4 - Bleu de Chanel<br>Atmosphère</h3>
+      <a href="https://magnaroma.com.tr/atmosphere?Hacim=100-ml">Ürüne Git</a>
+    </div>
+    <div class="magna-men-card">
+      <img src="https://cdn.myikas.com/images/26b68f22-f0b6-4a1c-98aa-00def11324f5/6cfe7f6a-b9f9-41d7-87ac-4e70327c680d/3840/chatgpt-image-27-ara-2025-11-36-01.webp" alt="Pantheon">
+      <h3>6 - Naxos<br>Pantheon</h3>
+      <a href="https://magnaroma.com.tr/pantheon-1?Hacim=100-ml&amp;SETLI%2FSETSIZ%2F=Cep-%C5%9Ei%C5%9Fesi-ve-Kutu-%C4%B0stemiyorum">Ürüne Git</a>
+    </div>
+    <div class="magna-men-card">
+      <img src="https://cdn.myikas.com/images/26b68f22-f0b6-4a1c-98aa-00def11324f5/488f367c-da68-4059-abc8-4d1e4344588d/3840/chatgpt-image-18-oca-2026-21-51-54.webp" alt="Royal">
+      <h3>7 - Imagination<br>Royal</h3>
+      <a href="https://magnaroma.com.tr/imagination?Hacim=100-ml&amp;SETLI%2FSETSIZ%2F=Cep-%C5%9Ei%C5%9Fesi-ve-Kutu-%C4%B0stemiyorum">Ürüne Git</a>
+    </div>
+    <div class="magna-men-card">
+      <img src="https://cdn.myikas.com/images/26b68f22-f0b6-4a1c-98aa-00def11324f5/e622e1f2-5ff8-4d11-bb46-df310815486d/3840/chatgpt-image-27-ara-2025-13-30-36.webp" alt="Symphony">
+      <h3>9 - Layton<br>Symphony</h3>
+      <a href="https://magnaroma.com.tr/parfums-de-marly-layton-premium-set?Hacim=100-ml&amp;SETLI%2FSETSIZ%2F=Cep-%C5%9Ei%C5%9Fesi-ve-Kutu-%C4%B0stemiyorum">Ürüne Git</a>
+    </div>
+    <div class="magna-men-card">
+      <img src="https://cdn.myikas.com/images/26b68f22-f0b6-4a1c-98aa-00def11324f5/581e113c-8913-4a34-b1b9-b39f691ae6a9/3840/chatgpt-image-6-oca-2026-16-07-12.webp" alt="Mirage">
+      <h3>11 - Reflection Man<br>Mirage</h3>
+      <a href="https://magnaroma.com.tr/amougereflectionman?Hacim=100-ml&amp;SETLI%2FSETSIZ%2F=Cep-%C5%9Ei%C5%9Fesi-ve-Kutu-%C4%B0stemiyorum">Ürüne Git</a>
+    </div>
+  </section>
+</div>
+
+<!-- ============ 3. TÜM ZAMANLARIN EN İYİ KADIN KOKUSU ============ -->
+<div class="magna-women-area">
+  <section class="magna-women-hero">
+    <div>
+      <a href="https://magnaroma.com.tr/kadin-designer-parfumler">
+        <img src="images/hero-kadin-tum-zamanlar.png" alt="Tüm Zamanların En İyi Kadın Kokuları">
+      </a>
+    </div>
+    <div class="magna-women-content">
+      <h1>Tüm Zamanların En İyi Kadın Kokusu</h1>
+      <p>
+        Kadın parfüm dünyasında bazı kokular vardır; sadece bir koku değil, güçlü bir imza haline gelir.
+        Hypnotic Poison’ın büyüleyici vanilya ve badem dokusundan Coco Mademoiselle’in zarif modernliğine,
+        Delina’nın romantik gül etkisinden Portrait of a Lady’nin ihtişamlı duruşuna ve Goddess’ın sıcak feminen yapısına kadar
+        öne çıkan bu seçkide Magnaroma’daki karşılıklarını senin için bir araya getirdik.
+      </p>
+    </div>
+  </section>
+  <section class="magna-women-grid">
+    <div class="magna-women-card">
+      <img src="https://cdn.myikas.com/images/26b68f22-f0b6-4a1c-98aa-00def11324f5/ba872f2e-91cb-4c78-b7b0-cafe873225e6/3840/photoroom-20240224-004833.webp" alt="Orientalium">
+      <h3>1 - Hypnotic Poison<br>Orientalium</h3>
+      <a href="https://magnaroma.com.tr/orientalium?Hacim=100-ml">Ürüne Git</a>
+    </div>
+    <div class="magna-women-card">
+      <img src="https://cdn.myikas.com/images/26b68f22-f0b6-4a1c-98aa-00def11324f5/ed5e35a3-a83f-4f83-90a1-98cf758e2ade/3840/photoroom-20240221-115452.webp" alt="Afrodit">
+      <h3>3 - Coco Mademoiselle<br>Afrodit</h3>
+      <a href="https://magnaroma.com.tr/afrodit?Hacim=100-ml">Ürüne Git</a>
+    </div>
+    <div class="magna-women-card">
+      <img src="https://cdn.myikas.com/images/26b68f22-f0b6-4a1c-98aa-00def11324f5/9b97fc2a-4c00-4435-9202-688fb2b5c598/3840/chatgpt-image-6-oca-2026-12-44-45.webp" alt="Mona Rosa">
+      <h3>6 - Delina<br>Mona Rosa</h3>
+      <a href="https://magnaroma.com.tr/mona-rosa-premium-set?Hacim=100-ml&amp;SETLI%2FSETSIZ%2F=Cep-%C5%9Ei%C5%9Fesi-ve-Kutu-%C4%B0stemiyorum">Ürüne Git</a>
+    </div>
+    <div class="magna-women-card">
+      <img src="https://cdn.myikas.com/images/26b68f22-f0b6-4a1c-98aa-00def11324f5/24b5b8d8-4036-4652-a9b3-f74b32160ba6/3840/chatgpt-image-13-oca-2026-15-48-07.webp" alt="Sole Rosso">
+      <h3>10 - Portrait of a Lady<br>Sole Rosso</h3>
+      <a href="https://magnaroma.com.tr/sole-rosso-frederic-malle-portrait-of-a-lady-premium-set?Hacim=100-ml&amp;SETLI%2FSETSIZ%2F=Cep-%C5%9Ei%C5%9Fesi-ve-Kutu-%C4%B0stemiyorum">Ürüne Git</a>
+    </div>
+    <div class="magna-women-card">
+      <img src="https://cdn.myikas.com/images/26b68f22-f0b6-4a1c-98aa-00def11324f5/58ece0c1-31a9-41bb-9202-8cf36c09eedb/3840/chatgpt-image-27-ara-2025-15-50-02.webp" alt="Helen">
+      <h3>12 - Goddess<br>Helen</h3>
+      <a href="https://magnaroma.com.tr/goddess?Hacim=55-ml&amp;SETLI%2FSETSIZ%2F=Cep-%C5%9Ei%C5%9Fesi-ve-Kutu-%C4%B0stemiyorum">Ürüne Git</a>
+    </div>
+  </section>
+</div>
+
+<!-- ============ 4. 2022 & 2023 EN İYİ NİŞ PARFÜM ============ -->
+<div class="magna-award-area">
+  <section class="magna-award-hero">
+    <div>
+      <a href="https://magnaroma.com.tr/luxnoctis?Hacim=100-ml&amp;SETLI%2FSETSIZ%2F=Set-Olarak-%C4%B0stiyorum">
+        <img src="images/hero-nis-2022-2023.png" alt="2022 ve 2023 En İyi Niş Parfüm">
+      </a>
+    </div>
+    <div class="magna-award-content">
+      <h1>2022 &amp; 2023 En İyi Niş Parfüm</h1>
+      <p>
+        Baharatlı incir, sandal ağacı ve rafine odunsu dokuların sofistike birleşimiyle
+        Gris Charnel Extrait, modern niş parfüm dünyasında güçlü ve zarif bir imza bırakıyor.
+        Derin, karakterli ve kalıcı yapısıyla öne çıkan bu özel kokunun Magnaroma’daki karşılığı:
+        <strong>Lux Noctis</strong>.
+      </p>
+    </div>
+  </section>
+  <section class="magna-award-grid">
+    <div class="magna-award-card">
+      <img src="https://cdn.myikas.com/images/26b68f22-f0b6-4a1c-98aa-00def11324f5/436468f2-7247-4b89-a88b-d732d4005394/3840/photoroom-20240222-005104.webp" alt="Lux Noctis">
+      <h3>BDK Gris Charnel Extrait<br>Lux Noctis</h3>
+      <a href="https://magnaroma.com.tr/luxnoctis?Hacim=100-ml&amp;SETLI%2FSETSIZ%2F=Cep-%C5%9Ei%C5%9Fesi-ve-Kutu-%C4%B0stemiyorum">Ürüne Git</a>
+    </div>
+  </section>
+</div>
+
+<!-- ============ 5. 2024 EN İYİ NİŞ PARFÜMÜ ============ -->
+<div class="magna-2024-area">
+  <section class="magna-2024-hero">
+    <div>
+      <a href="https://magnaroma.com.tr/kadin-designer-parfumler">
+        <img src="images/hero-nis-2024.png" alt="2024 En İyi Niş Parfümü">
+      </a>
+    </div>
+    <div class="magna-2024-content">
+      <h1>2024 En İyi Niş Parfümü</h1>
+      <p>
+        2024’ün öne çıkan niş parfümleri; yoğun, egzotik ve karakterli kokularıyla parfüm dünyasında güçlü bir etki bıraktı.
+        Maison Crivelli Oud Maracuja’nın dikkat çekici oud ve tropikal meyve kontrastı, modern niş parfüm anlayışının en iddialı örneklerinden biri.
+        Magnaroma’daki karşılığı: <strong>Nocturnal</strong>.
+      </p>
+    </div>
+  </section>
+  <section class="magna-2024-grid">
+    <div class="magna-2024-card">
+      <img src="https://cdn.myikas.com/images/26b68f22-f0b6-4a1c-98aa-00def11324f5/fb0bcc18-6b56-420b-b847-0d1734be8d6e/2560/photoroom-20250912-190058.webp" alt="Nocturnal">
+      <h3>1 - Maison Crivelli Oud Maracuja<br>Nocturnal</h3>
+      <a href="https://magnaroma.com.tr/nocturnal?Hacim=100-ml&amp;SETLI%2FSETSIZ%2F=Cep-%C5%9Ei%C5%9Fesi-ve-Kutu-%C4%B0stemiyorum">Ürüne Git</a>
+    </div>
+  </section>
+</div>
+
+<!-- ============ 6. 2025 KADINLARIN FAVORİ ERKEK KOKUSU ============ -->
+<div class="magna-menfav25-area">
+  <section class="magna-menfav25-hero">
+    <div>
+      <a href="https://magnaroma.com.tr/erkek-designer-parfumler">
+        <img src="images/hero-erkek-kadinlarin-favorisi-2025.png" alt="2025 Kadınların Favori Erkek Kokusu">
+      </a>
+    </div>
+    <div class="magna-menfav25-content">
+      <h1>2025 Kadınların Favori Erkek Kokusu</h1>
+      <p>
+        2025’te kadınların dikkatini çeken erkek kokuları; sıcak, karizmatik, temiz ve unutulmaz bir imza bırakan parfümlerden oluşuyor.
+        Althair’in modern vanilya etkisinden Tobacco Vanille’in yoğun ve çekici havasına, Terre d’Hermès’in doğal maskülenliğinden
+        Grand Soir’in zarif amber sıcaklığına kadar öne çıkan bu seçkide Magnaroma’daki karşılıklarını senin için bir araya getirdik.
+      </p>
+    </div>
+  </section>
+  <section class="magna-menfav25-grid">
+    <div class="magna-menfav25-card">
+      <img src="https://cdn.myikas.com/images/26b68f22-f0b6-4a1c-98aa-00def11324f5/2c6e9fbe-b7e0-4fc7-95dd-c9cb6207e443/3840/chatgpt-image-6-oca-2026-13-09-17.webp" alt="Blaze">
+      <h3>1 - Althair<br>Blaze</h3>
+      <a href="https://magnaroma.com.tr/althair?Hacim=55-ml&amp;SETLI%2FSETSIZ%2F=Cep-%C5%9Ei%C5%9Fesi-ve-Kutu-%C4%B0stemiyorum">Ürüne Git</a>
+    </div>
+    <div class="magna-menfav25-card">
+      <img src="https://cdn.myikas.com/images/26b68f22-f0b6-4a1c-98aa-00def11324f5/4948d327-0a58-4376-8a10-0976c13d7dd2/3840/photoroom-20240622-165806.webp" alt="Conquer">
+      <h3>4 - Tobacco Vanille<br>Conquer</h3>
+      <a href="https://magnaroma.com.tr/conquer-premium-set?Hacim=100-ml&amp;SETLI%2FSETSIZ%2F=Cep-%C5%9Ei%C5%9Fesi-ve-Kutu-%C4%B0stemiyorum">Ürüne Git</a>
+    </div>
+    <div class="magna-menfav25-card">
+      <img src="https://cdn.myikas.com/images/26b68f22-f0b6-4a1c-98aa-00def11324f5/d71873e2-1864-4b19-9303-bba8bd3e07e8/image_3840.webp" alt="Hermétismes">
+      <h3>5 - Terre d’Hermès<br>Hermétismes</h3>
+      <a href="https://magnaroma.com.tr/herme?Hacim=100-ml">Ürüne Git</a>
+    </div>
+    <div class="magna-menfav25-card">
+      <img src="https://cdn.myikas.com/images/26b68f22-f0b6-4a1c-98aa-00def11324f5/7d1c614c-d9e5-46f2-986d-699a4539232b/3840/chatgpt-image-9-oca-2026-17-08-54.webp" alt="Cobalt">
+      <h3>6 - You Intensely<br>Cobalt</h3>
+      <a href="https://magnaroma.com.tr/cobalt-1?Hacim=100-ml&amp;SETLI%2FSETSIZ%2F=Cep-%C5%9Ei%C5%9Fesi-ve-Kutu-%C4%B0stemiyorum">Ürüne Git</a>
+    </div>
+    <div class="magna-menfav25-card">
+      <img src="https://cdn.myikas.com/images/26b68f22-f0b6-4a1c-98aa-00def11324f5/3142a357-89c4-46aa-9529-b1959edba79e/3840/chatgpt-image-4-oca-2026-15-31-45.webp" alt="Orion">
+      <h3>7 - Grand Soir<br>Orion</h3>
+      <a href="https://magnaroma.com.tr/orion-1?Hacim=100-ml&amp;SETLI%2FSETSIZ%2F=Set-Olarak-%C4%B0stiyorum">Ürüne Git</a>
+    </div>
+    <div class="magna-menfav25-card">
+      <img src="https://cdn.myikas.com/images/26b68f22-f0b6-4a1c-98aa-00def11324f5/f9a3136f-2820-4f37-8481-02ef562ee16c/3840/e94802-2041ec7972794cb5bb32883e3ddb5e59mv2.webp" alt="Flechazo">
+      <h3>8 - Homme Intense<br>Flechazo</h3>
+      <a href="https://magnaroma.com.tr/flechazo?Hacim=100-ml">Ürüne Git</a>
+    </div>
+    <div class="magna-menfav25-card">
+      <img src="https://cdn.myikas.com/images/26b68f22-f0b6-4a1c-98aa-00def11324f5/488f367c-da68-4059-abc8-4d1e4344588d/3840/chatgpt-image-18-oca-2026-21-51-54.webp" alt="Royal">
+      <h3>10 - Imagination<br>Royal</h3>
+      <a href="https://magnaroma.com.tr/imagination?Hacim=100-ml&amp;SETLI%2FSETSIZ%2F=Cep-%C5%9Ei%C5%9Fesi-ve-Kutu-%C4%B0stemiyorum">Ürüne Git</a>
+    </div>
+  </section>
+</div>
+
+<!-- ============ 7. 2025 EN İYİ ERKEK PARFÜMLERİ ============ -->
+<div class="magna-men24-area">
+  <section class="magna-men24-hero">
+    <div>
+      <a href="https://magnaroma.com.tr/erkek-designer-parfumler">
+        <img src="images/hero-erkek-2025.png" alt="2025 En İyi Erkek Parfümleri">
+      </a>
+    </div>
+    <div class="magna-men24-content">
+      <h1>2025 En İyi Erkek Parfümleri</h1>
+      <p>
+        2025’te erkek parfüm dünyasında öne çıkan kokular; yoğun, karakterli ve modern maskülenliği yansıtan güçlü kompozisyonlarıyla dikkat çekiyor.
+        Bottled Absolu’nun derin ve karizmatik yapısından Aventus Absolu’nun güçlü lider hissine,
+        Outlands’in özgün ve modern karakterine kadar seçilmiş bu kokuların Magnaroma karşılıklarını senin için bir araya getirdik.
+      </p>
+    </div>
+  </section>
+  <section class="magna-men24-grid">
+    <div class="magna-men24-card">
+      <img src="https://cdn.myikas.com/images/26b68f22-f0b6-4a1c-98aa-00def11324f5/0291b37b-08ef-4652-9948-849e748eebb1/3840/chatgpt-image-4-sub-2026-16-13-56.webp" alt="Venom">
+      <h3>1 - Bottled Absolu<br>Venom</h3>
+      <a href="https://magnaroma.com.tr/venom?Hacim=55-ml&amp;SETLI%2FSETSIZ%2F=Cep-%C5%9Ei%C5%9Fesi-ve-Kutu-%C4%B0stemiyorum">Ürüne Git</a>
+    </div>
+    <div class="magna-men24-card">
+      <img src="https://cdn.myikas.com/images/26b68f22-f0b6-4a1c-98aa-00def11324f5/8fb66a7a-a619-4ad4-b70e-b129bde138f0/3840/gemini-generated-image-g7dv18g7dv18g7dv.webp" alt="Alamut">
+      <h3>2 - Absolu Aventus<br>Alamut</h3>
+      <a href="https://magnaroma.com.tr/alamut-premium-set?Hacim=100-ml&amp;SETLI%2FSETSIZ%2F=Cep-%C5%9Ei%C5%9Fesi-ve-Kutu-%C4%B0stemiyorum">Ürüne Git</a>
+    </div>
+    <div class="magna-men24-card">
+      <img src="https://cdn.myikas.com/images/26b68f22-f0b6-4a1c-98aa-00def11324f5/bf023c75-9907-4dfb-96cc-bc939727dc78/3840/chatgpt-image-16-oca-2026-01-03-34.webp" alt="Gravity">
+      <h3>7 - Outlands<br>Gravity</h3>
+      <a href="https://magnaroma.com.tr/gravity-premium-set-?Hacim=55-ml&amp;SETLI%2FSETSIZ%2F=Cep-%C5%9Ei%C5%9Fesi-ve-Kutu-%C4%B0stemiyorum">Ürüne Git</a>
+    </div>
+  </section>
+</div>
+
+<!-- ============ 8. 2025 ÖNE ÇIKAN NİŞ KADIN KOKULARI ============ -->
+<div class="magna-women24-area">
+  <section class="magna-women24-hero">
+    <div>
+      <a href="https://magnaroma.com.tr/kadin-designer-parfumler">
+        <img src="images/hero-nis-kadin-2025.png" alt="2025 Öne Çıkan Niş Kadın Kokuları">
+      </a>
+    </div>
+    <div class="magna-women24-content">
+      <h1>2025 Öne Çıkan Niş Kadın Kokuları</h1>
+      <p>
+        2025’te niş parfüm dünyasında öne çıkan kokular, klasik feminenliğin ötesine geçerek
+        daha derin, karakterli ve sofistike bir duruş sunuyor.
+        Guidance 46’nın yoğun ve büyüleyici yapısından Tilia’nın zarif ve dingin dokusuna kadar
+        seçilmiş bu kokuların Magnaroma’daki karşılıklarını senin için bir araya getirdik.
+      </p>
+    </div>
+  </section>
+  <section class="magna-women24-grid">
+    <div class="magna-women24-card">
+      <img src="https://cdn.myikas.com/images/26b68f22-f0b6-4a1c-98aa-00def11324f5/4bebe990-2544-47f3-9b9a-1336bdcfe853/3840/chatgpt-image-16-oca-2026-01-45-37.webp" alt="Harmonie">
+      <h3>1 - Guidance 46<br>Harmonie</h3>
+      <a href="https://magnaroma.com.tr/harmonie-premium-set?Hacim=100-ml&amp;SETLI%2FSETSIZ%2F=Cep-%C5%9Ei%C5%9Fesi-ve-Kutu-%C4%B0stemiyorum">Ürüne Git</a>
+    </div>
+    <div class="magna-women24-card">
+      <img src="https://cdn.myikas.com/images/26b68f22-f0b6-4a1c-98aa-00def11324f5/89154768-d47f-4fd1-ba52-4288efe6b4fb/3840/chatgpt-image-31-ara-2025-15-40-40.webp" alt="Lilith">
+      <h3>6 - Tilia<br>Lilith</h3>
+      <a href="https://magnaroma.com.tr/lilith?Hacim=100-ml&amp;SETLI%2FSETSIZ%2F=Set-Olarak-%C4%B0stiyorum">Ürüne Git</a>
+    </div>
+  </section>
+</div>
+
+<!-- ============ 9. 2025 ERKEKLERİN FAVORİ KADIN KOKUSU ============ -->
+<div class="magna-womenfav25-area">
+  <section class="magna-womenfav25-hero">
+    <div>
+      <a href="https://magnaroma.com.tr/kadin-designer-parfumler">
+        <img src="images/hero-kadin-erkeklerin-favorisi-2025.png" alt="2025 Erkeklerin Favori Kadın Kokusu">
+      </a>
+    </div>
+    <div class="magna-womenfav25-content">
+      <h1>2025 Erkeklerin Favori Kadın Kokusu</h1>
+      <p>
+        2025’te erkeklerin en çok dikkatini çeken kadın kokuları; romantik, çekici, sıcak ve akılda kalıcı imza kokulardan oluşuyor.
+        Delina’nın zarif gül etkisinden Guidance 46’nın derin ve büyüleyici yapısına, Hypnotic Poison’ın baştan çıkarıcı vanilya dokusundan
+        Black Opium’un enerjik ve iddialı karakterine kadar öne çıkan bu seçkide Magnaroma’daki karşılıklarını senin için bir araya getirdik.
+      </p>
+    </div>
+  </section>
+  <section class="magna-womenfav25-grid">
+    <div class="magna-womenfav25-card">
+      <img src="https://cdn.myikas.com/images/26b68f22-f0b6-4a1c-98aa-00def11324f5/9b97fc2a-4c00-4435-9202-688fb2b5c598/3840/chatgpt-image-6-oca-2026-12-44-45.webp" alt="Mona Rosa">
+      <h3>1 - Delina<br>Mona Rosa</h3>
+      <a href="https://magnaroma.com.tr/mona-rosa-premium-set?Hacim=100-ml&amp;SETLI%2FSETSIZ%2F=Cep-%C5%9Ei%C5%9Fesi-ve-Kutu-%C4%B0stemiyorum">Ürüne Git</a>
+    </div>
+    <div class="magna-womenfav25-card">
+      <img src="https://cdn.myikas.com/images/26b68f22-f0b6-4a1c-98aa-00def11324f5/4bebe990-2544-47f3-9b9a-1336bdcfe853/3840/chatgpt-image-16-oca-2026-01-45-37.webp" alt="Harmonie">
+      <h3>2 - Guidance 46<br>Harmonie</h3>
+      <a href="https://magnaroma.com.tr/harmonie-premium-set?Hacim=100-ml&amp;SETLI%2FSETSIZ%2F=Cep-%C5%9Ei%C5%9Fesi-ve-Kutu-%C4%B0stemiyorum">Ürüne Git</a>
+    </div>
+    <div class="magna-womenfav25-card">
+      <img src="https://cdn.myikas.com/images/26b68f22-f0b6-4a1c-98aa-00def11324f5/ba872f2e-91cb-4c78-b7b0-cafe873225e6/3840/photoroom-20240224-004833.webp" alt="Orientalium">
+      <h3>5 - Hypnotic Poison<br>Orientalium</h3>
+      <a href="https://magnaroma.com.tr/orientalium?Hacim=100-ml">Ürüne Git</a>
+    </div>
+    <div class="magna-womenfav25-card">
+      <img src="https://cdn.myikas.com/images/26b68f22-f0b6-4a1c-98aa-00def11324f5/dccf795d-fca5-4bde-a188-9aa71dec24a1/3840/img-3824-min.webp" alt="Snow White">
+      <h3>8 - Black Opium<br>Snow White</h3>
+      <a href="https://magnaroma.com.tr/snow-white?Hacim=100-ml">Ürüne Git</a>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>
